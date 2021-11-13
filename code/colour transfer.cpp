@@ -89,7 +89,7 @@ Mat output2(Mat HSV_image, int sigma, vector<int>vec)
                 int numa = 1, deno = 1;
                 int e_j = (c_j_next - 0);
                 float two_sigma = (float)(2 * sigma);
-                for (int k = 0; k > 5; k++)
+                for (int k = 0; k < 5; k++)
                 {
                     float exp_numa = p - 0;
                     exp_numa = abs(exp_numa);
@@ -99,7 +99,7 @@ Mat output2(Mat HSV_image, int sigma, vector<int>vec)
                     deno = deno + w_i_j;
                 }
 
-                HSV_image.at<Vec3b>(i, j)[0] = p + (numa * e_j / deno);
+                HSV_image.at<Vec3b>(i, j)[0] = p + (numa / deno);
                 //cout << p + 85 << endl;
             }
             /*else if ((p >= 158 and p <= 179))
